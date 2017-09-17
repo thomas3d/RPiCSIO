@@ -1,0 +1,6 @@
+C:\Code\RaspberryPi\RPICSIO\RPICSIO\bin\Debug\RPICSIO.dll
+C:\Code\RaspberryPi\RPICSIO\RPICSIO\bin\Debug\RPICSIO.pdb
+C:\Code\RaspberryPi\RPICSIO\RPICSIO\bin\Debug\Mono.Posix.dll
+C:\Code\RaspberryPi\RPICSIO\RPICSIO\obj\x86\Debug\RPICSIO.dll
+C:\Code\RaspberryPi\RPICSIO\RPICSIO\obj\x86\Debug\RPICSIO.pdb
+C:\Code\RaspberryPi\RPICSIO\RPICSIO\obj\x86\Debug\RPICSIO.csprojResolveAssemblyReference.cache
