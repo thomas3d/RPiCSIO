@@ -193,6 +193,43 @@ namespace RPICSIO
 
         /// +=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
         /// <summary>
+        /// Return a list of active devices on the bus 
+        /// 
+        /// </summary>
+        /// <history>
+        ///    23 Sep 17  Jam - Originally written
+        /// </history>
+        public List<byte> AddressScan()
+        {
+            int ioctlRetVal = -1;
+
+            if (i2CPortFD <= 0)
+            {
+                throw new Exception("I2C port is not open, fd=0");
+            }
+            if (PortIsOpen == false)
+            {
+                throw new Exception("I2C port is not open");
+            }
+
+            var buffer = new byte[] { 1 };
+            var list = new List<byte>();
+            for (byte add = 0; add < 128; add++)
+            {
+                ioctlRetVal = ExternalIoCtl(i2CPortFD, I2C_DEV, add);
+                if (ioctlRetVal >= 0)
+                {
+                    int numWritten = ExternalWrite(i2CPortFD, buffer, 1);
+                    if(numWritten == 1)
+                        list.Add(add);
+                }
+            }
+
+            return list;
+        }
+
+        /// +=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+        /// <summary>
         /// Opens the port. Throws an exception on failure
         /// 
         /// </summary>
