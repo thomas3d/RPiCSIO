@@ -3,8 +3,6 @@
 using System.Collections.Generic;
 using System.Threading;
 using System.Runtime.InteropServices;
-using Microsoft.Win32.SafeHandles;
-using Mono.Unix;
 using Mono.Unix.Native;
 
 /// +------------------------------------------------------------------------------------------------------------------------------+
