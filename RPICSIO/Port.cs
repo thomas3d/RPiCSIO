@@ -53,7 +53,7 @@ namespace RPICSIO
             // Test the PRI Type has been set
             if (RPICSIOGlobalConfig.RPIType == RPITypeEnum.RPITYPE_UNKNOWN)
             {
-                throw new Exception("The RPIType is UNKNOWN. Have you made a call like: RPICSIOConfig.Instance.RPIType = RPITypeEnum.RPITYPE_RPI2;");
+                throw new Exception("The RPIType is UNKNOWN. Maybe you forgot something like this in your code: RPICSIOConfig.Instance.RPIType = RPITypeEnum.RPITYPE_RPI2;");
             }
 
             // set our GpioConfig object now
